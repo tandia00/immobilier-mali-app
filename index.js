@@ -1,5 +1,7 @@
-import { registerRootComponent } from 'expo';
+// Importer le module de désactivation des logs en premier
+import './config/disableLogs';
 
+import { registerRootComponent } from 'expo';
 import App from './App';
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);

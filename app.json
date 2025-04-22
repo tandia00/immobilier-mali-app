@@ -6,23 +6,49 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
+    "scheme": "immobiliermali",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "L'application nécessite l'accès à vos photos pour ajouter des images de propriété.",
+          "cameraPermission": "L'application nécessite l'accès à votre appareil photo pour prendre des photos de propriété."
+        }
+      ]
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "L'application nécessite l'accès à votre appareil photo pour prendre des photos de propriété.",
+        "NSPhotoLibraryUsageDescription": "L'application nécessite l'accès à vos photos pour ajouter des images de propriété."
+      }
     },
     "android": {
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.traorehamidou1990.immobiliermaliapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "387ade7b-89c6-447c-a405-2c0fe03dfc84"
+      }
     }
   }
 }

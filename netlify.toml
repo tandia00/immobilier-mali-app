@@ -1,0 +1,12 @@
+[build]
+  base = ""
+  publish = "web-build"
+
+[build.environment]
+  EXPO_PUBLIC_SUPABASE_URL = "${{secrets.SUPABASE_URL}}"
+  EXPO_PUBLIC_SUPABASE_ANON_KEY = "${{secrets.SUPABASE_ANON_KEY}}"
+
+[dev]
+  command = "expo start --web"
+  targetPort = 19006
+  framework = "react"
